@@ -3,7 +3,7 @@
 	url = https://github.com/mikke89/RmlUi/
 [submodule "lib/rt64"]
 	path = lib/rt64
-	url = https://github.com/rt64/rt64
+	url = https://github.com/AurelioB/rt64.git
 [submodule "lib/freetype-windows-binaries"]
 	path = lib/freetype-windows-binaries
 	url = https://github.com/ubawurinna/freetype-windows-binaries
@@ -18,10 +18,10 @@
 	url = https://github.com/DLTcollab/sse2neon.git
 [submodule "lib/N64ModernRuntime"]
 	path = lib/N64ModernRuntime
-	url = https://github.com/N64Recomp/N64ModernRuntime.git
+	url = https://github.com/AurelioB/N64ModernRuntime.git
 [submodule "lib/ct1jp"]
 	path = lib/ct1jp
-	url = https://github.com/chameleonTwistRet/chameleonTwistv1.0-JP.git
+	url = https://github.com/AurelioB/chameleonTwistv1.0-JP.git
 [submodule "ChameleonTwistJPSyms"]
 	path = ChameleonTwistJPSyms
-	url = https://github.com/Rainchus/ChameleonTwistJPSyms.git
+	url = https://github.com/AurelioB/ChameleonTwistJPSyms.git
