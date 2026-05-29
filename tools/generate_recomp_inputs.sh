@@ -19,6 +19,13 @@ fi
 ./RSPRecomp aspMain.toml
 ./N64Recomp jp.rev0.toml
 
-# CT1 has native patch recompilation sources generated through the CMake PatchesBin flow.
-# Build-time CMake will regenerate RecompiledPatches/patches.c and patches_bin.c from patches.toml
-# after patches/patches.elf exists.
+# CT1 also needs the native patch ELF recompiled into C sources before Gradle's
+# full-runtime preflight runs. Prefer host LLVM tools; Android NDK clang does not
+# support this MIPS patch build.
+mkdir -p RecompiledPatches
+make -C patches \
+  CC="${PATCHES_C_COMPILER:-clang}" \
+  LD="${PATCHES_LD:-ld.lld}" \
+  OBJCOPY="${PATCHES_OBJCOPY:-llvm-objcopy}"
+./N64Recomp patches.toml
+file_to_c patches/patches.bin mm_patches_bin RecompiledPatches/patches_bin.c RecompiledPatches/patches_bin.h
